@@ -37,7 +37,8 @@ const PaymentChoicePay = ({choice,setChoice,checkBoxHover,setCheckBoxHover,setDo
         axios.post('/payments/bank').then(res=>{
             console.log(res.data)
             if (res.data.status === 'success'){
-                window.open(res.data.link)
+                window.location.href = res.data.link
+                // window.open(res.data.link,'_blank')
             }
         })
     }
